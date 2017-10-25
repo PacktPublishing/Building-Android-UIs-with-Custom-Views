@@ -10,9 +10,7 @@ Google Play, like any other mobile application store, is highly saturated. Unles
 application does something unique or has something special, it's extremely hard to stand
 out from the dozens of applications doing approximately the same, or even if they’re
 completely unrelated.
-Increasing marketing spending might temporarily alleviate the issue but, in the long term,
-applications still need to figure out that unique functionality or that detail that makes them
-different.
+
 ## Instructions and Navigation
 All of the code is organized into folders. Each folder starts with a number followed by the application name. For example, Chapter02.
 

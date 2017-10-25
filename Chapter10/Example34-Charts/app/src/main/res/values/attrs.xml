@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Chart">
+        <attr name="backgroundColor" format="color"/>
+        <attr name="programColor" format="color"/>
+        <attr name="highlightedProgramColor" format="color"/>
+        <attr name="currentTimeColor" format="color"/>
+        <attr name="channelTextColor" format="color"/>
+        <attr name="programTextColor" format="color"/>
+        <attr name="highlightedProgramTextColor" format="color"/>
+        <attr name="timeBarColor" format="color"/>
+
+        <attr name="channelHeight" format="float"/>
+        <attr name="programMargin" format="float"/>
+        <attr name="timebarHeight" format="float"/>
+    </declare-styleable>
+</resources>

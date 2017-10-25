@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Example32-Library.iml" filepath="$PROJECT_DIR$/Example32-Library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidcustomview/androidcustomview.iml" filepath="$PROJECT_DIR$/androidcustomview/androidcustomview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testapp/testapp.iml" filepath="$PROJECT_DIR$/testapp/testapp.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GLView</string>
+    <string name="filler_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus venenatis tortor in sapien molestie, vitae tempor velit auctor.</string>
+</resources>

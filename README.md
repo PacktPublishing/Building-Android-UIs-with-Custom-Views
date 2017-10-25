@@ -5,6 +5,7 @@ Many years ago, before the launch of Android and the iPhone, one of the major co
 was having a central place to purchase and download mobile applications. Nowadays, we
 manage to solve this issue with widely available centralized application stores such as
 Google Play, at the expense of application discoverability.
+
 Google Play, like any other mobile application store, is highly saturated. Unless an
 application does something unique or has something special, it's extremely hard to stand
 out from the dozens of applications doing approximately the same, or even if they’re

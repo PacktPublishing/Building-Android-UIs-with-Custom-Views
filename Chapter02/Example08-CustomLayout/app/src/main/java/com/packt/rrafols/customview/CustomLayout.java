@@ -35,6 +35,9 @@ public class CustomLayout extends ViewGroup {
                 left = l + getPaddingLeft();
                 top += rowHeight;
                 rowHeight = 0;
+
+                child.layout(left, top, left + childWidth, top + childHeight);
+                left += childWidth;
             }
 
             // update maximum row height

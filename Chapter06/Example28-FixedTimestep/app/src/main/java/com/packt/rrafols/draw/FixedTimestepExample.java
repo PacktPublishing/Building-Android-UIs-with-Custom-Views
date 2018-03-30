@@ -24,7 +24,7 @@ public class FixedTimestepExample extends View {
     private long accTime;
     private int previousVisibility;
     private long invisibleTimeStart;
-
+    private boolean hasBeenVisible = false;
 
     public FixedTimestepExample(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -50,7 +50,7 @@ public class FixedTimestepExample extends View {
         super.onVisibilityChanged(changedView, visibility);
 
         // avoid doing this check before View is even visible
-        if (timeStart != -1) {
+        if (hasBeenVisible) {
             if ((visibility == View.INVISIBLE || visibility == View.GONE) &&
                     previousVisibility == View.VISIBLE) {
 
@@ -62,8 +62,9 @@ public class FixedTimestepExample extends View {
 
                 timeStart += SystemClock.elapsedRealtime() - invisibleTimeStart;
             }
-        } else {
+        } else if (visibility == View.VISIBLE) {
             timeStart = SystemClock.elapsedRealtime();
+            hasBeenVisible = true;
         }
 
         previousVisibility = visibility;

@@ -10,7 +10,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
@@ -29,6 +28,8 @@ import java.util.Locale;
 
 public class EPG extends View {
     private static final String TAG = EPG.class.getName();
+
+    private static final float TOUCH_SENSITIVITY = 0.5F;
 
     private static final int BACKGROUND_COLOR = 0xFF333333;
     private static final int PROGRAM_COLOR = 0xFF666666;
@@ -69,6 +70,7 @@ public class EPG extends View {
     private float scrollY;
     private float scrollXTarget;
     private float scrollYTarget;
+    private float chNameSmallestWidth;
     private float chNameWidthTarget;
     private float chNameWidth;
     private boolean shortChannelMode;
@@ -190,7 +192,7 @@ public class EPG extends View {
         });
 
         chNameWidthTarget = channelHeight;
-        chNameWidth = chNameWidthTarget;
+        chNameSmallestWidth = chNameWidth = chNameWidthTarget;
         shortChannelMode = true;
         switchNameWidth = false;
 
@@ -245,8 +247,10 @@ public class EPG extends View {
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
 
+        // offset shifts time bar with indicator
+        int xOffset = (int) (frChNameWidth - chNameSmallestWidth);
         long time = calendar.getTimeInMillis();
-        float x = getTimeHorizontalPosition(time) - frScrollX + getWidth() / 4.f;
+        float x = xOffset + getTimeHorizontalPosition(time) - frScrollX + getWidth() / 4.f;
 
         while (x < getWidth()) {
             if (x > 0) {
@@ -270,7 +274,7 @@ public class EPG extends View {
             }
 
             time += 30 * 60 * 1000;
-            x = getTimeHorizontalPosition(time) - frScrollX + getWidth() / 4.f;
+            x = xOffset + getTimeHorizontalPosition(time) - frScrollX + getWidth() / 4.f;
         }
 
         canvas.drawLine(0,
@@ -439,18 +443,27 @@ public class EPG extends View {
                 return true;
 
             case MotionEvent.ACTION_MOVE:
-                float newX = event.getX();
-                float newY = event.getY();
+                float dx = dragX - event.getX();
+                float dy = dragY - event.getY();
 
-                scrollScreen(dragX - newX, dragY - newY);
+                if (!passesMoveSensitivityTest(dx, dy)) {
+                    dragged = false;
+                    return true;
+                }
 
-                dragX = newX;
-                dragY = newY;
+                scrollScreen(dx, dy);
+
+                dragX = event.getX();
+                dragY = event.getY();
                 dragged = true;
                 return true;
             default:
                 return false;
         }
+    }
+
+    private static boolean passesMoveSensitivityTest(float dx, float dy) {
+        return Math.abs(dx) >= TOUCH_SENSITIVITY || Math.abs(dy) >= TOUCH_SENSITIVITY;
     }
 
     private void clickProgram(float x, float y) {

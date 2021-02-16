@@ -192,14 +192,14 @@ public class GLDrawer extends GLSurfaceView {
             GLES20.glUniform1i(texHandle, 0);
 
             GLES20.glEnable(GLES20.GL_DEPTH_TEST);
-            GLES20.glEnableVertexAttribArray(texHandle);
+            GLES20.glEnableVertexAttribArray(texCoordHandle);
             GLES20.glEnableVertexAttribArray(positionHandle);
             GLES20.glDrawElements(
                     GLES20.GL_TRIANGLES, index.length,
                     GLES20.GL_UNSIGNED_SHORT, indexBuffer);
 
             GLES20.glDisableVertexAttribArray(positionHandle);
-            GLES20.glDisableVertexAttribArray(texHandle);
+            GLES20.glDisableVertexAttribArray(texCoordHandle);
             GLES20.glDisable(GLES20.GL_DEPTH_TEST);
         }
     }

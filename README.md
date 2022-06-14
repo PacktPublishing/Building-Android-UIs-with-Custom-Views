@@ -1,7 +1,3 @@
-## [Get this title for $10 on Packt's Spring Sale](https://www.packt.com/B06885?utm_source=github&utm_medium=packt-github-repo&utm_campaign=spring_10_dollar_2022)
------
-For a limited period, all eBooks and Videos are only $10. All the practical content you need \- by developers, for developers
-
 # Building Android UIs with Custom Views
 This is the code repository for [Building Android UIs with Custom Views](https://www.packtpub.com/application-development/building-android-uis-custom-views?utm_source=github&utm_medium=repository&utm_campaign=9781785882869), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the book from start to finish.
 ## About the Book

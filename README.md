@@ -32,3 +32,7 @@ In order to follow the examples in this book, you’ll need Android Studio insta
 * [Creating Dynamic UI with Android Fragments](https://www.packtpub.com/application-development/creating-dynamic-ui-android-fragments?utm_source=github&utm_medium=repository&utm_campaign=9781783283095)
 
 * [Building Android Games with Cocos2d-x](https://www.packtpub.com/game-development/cocos2d-x-android-game-development?utm_source=github&utm_medium=repository&utm_campaign=9781785283833)
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781785882869">https://packt.link/free-ebook/9781785882869 </a> </p>
